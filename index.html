@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-forms-async-validation</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+
+<body ng-app="app1">
+  <div ng-controller="ctrl1">
+  <div class="col-md-12 background-white">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="method">Method :</label>
+      <select class="form-control" id="method" required onchange="change()">
+        <option value="">-- select --</option>
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="divide">Divide</option>
+      </select>
+    </div>
+  </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <div class="col-sm-12">
+            <label for="frq"><span>Calculator :</span></label>
+        </div>
+        <div class="col-sm-3 col-md-offset-2">
+            <input type="text" id="noone" class="form-control" ng-model='first'required disabled><br>
+        </div>
+        <div class="col-sm-3 col-md-offset-2">
+            <input type="text" id="notwo" class="form-control" ng-model='second'required disabled><br>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <input type="submit" id="sub" ng-click="updateValue()" value="Check" class="btn btn-primary" disabled/><br>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <h1><b>{{ calculation }}</b></h1>
+
+      </div>
+    </div>
+    </div>
+</body>
+<script>
+function change(){
+
+  $("#noone").removeAttr("disabled");
+  $("#notwo").removeAttr("disabled");
+  $("#sub").removeAttr("disabled");
+
+}
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-2.2.3.min.js"></script>
+</html>
